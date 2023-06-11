@@ -12,3 +12,5 @@ Android Studio will do the rest
 
 5.Create a virtual Device or Add a physical Device
 6.Build the project and Run
+
+Enjoy
