@@ -19,4 +19,7 @@ jobs:
           java-version: '17'
 
       - name: Build app
-        run: ./gradlew assemble
+          chmod +x gradlew
+        run: |
+          chmod +x gradlew
+          ./gradlew assemble
