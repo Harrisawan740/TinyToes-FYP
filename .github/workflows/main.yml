@@ -1,13 +1,22 @@
-name: Push
+name: Android App Build
 
 on:
   push:
-    branches: [ "Harris-Branch", "Mubrra" ]
-  workflow_dispatch:
+    branches:
+      - Harris
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
+
     steps:
-        - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+
+      - name: Build app
+        run: ./gradlew assembleDebug
