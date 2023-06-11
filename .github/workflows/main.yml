@@ -1,19 +1,30 @@
-name: Android App Build
+name: Merge Branches to Main
 
 on:
   push:
     branches:
-      - Harris
+      - Harris-Branch
+      - Mubrra
 
 jobs:
-  build:
+  merge:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
-
       - name: Set up JDK
         uses: actions/setup-java@v1
         with:
           java-version: '17'
+
+      - name: Merge Harris-Branch to Harris
+        if: github.ref == 'refs/heads/Harris-Branch'
+        run: git merge Harris-Branch --no-edit
+
+      - name: Merge Mubrra to Harris
+        if: github.ref == 'refs/heads/Mubrra'
+        run: git merge Mubrra --no-edit
+
+      - name: Push changes
+        run: git push origin Harris
