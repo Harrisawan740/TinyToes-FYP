@@ -1,27 +1,13 @@
-name: TinyToes-FYP
+name: Push
 
 on:
   push:
-    branches:
-      - Harris-Branch
-      - Mubrra
+    branches: [ "develop", "master" ]
+  workflow_dispatch:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
-
     steps:
-      - name: Test
-        uses: actions/checkout@v2
-
-      - name: Build and test
-        run: ./gradlew build
-
-      - name: Merge to main
-        if: github.ref != 'refs/heads/main'
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git checkout Harris
-          git merge --no-ff ${{ github.ref }}
-          git push origin Harris
+        - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
