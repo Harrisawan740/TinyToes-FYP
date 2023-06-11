@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/register"
+    android:background="@color/white"
     tools:context=".RegisterUser">
 
     <TextView
@@ -39,7 +39,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RegisterLogoText" />
+        app:layout_constraintTop_toBottomOf="@+id/RegisterLogoText"
+        tools:ignore="DuplicateClickableBoundsCheck" />
 
     <EditText
         android:id="@+id/RegisterEmail"
@@ -97,8 +98,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Register"
+        android:backgroundTint="@color/teal_700"
         android:onClick="registerUser"
+        android:text="Register"
         app:layout_constraintEnd_toEndOf="@+id/ConfirmPasswprd"
         app:layout_constraintStart_toStartOf="@+id/ConfirmPasswprd"
         app:layout_constraintTop_toBottomOf="@+id/ConfirmPasswprd" />

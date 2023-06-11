@@ -17,26 +17,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.chaquo.python.PyObject;
-import com.chaquo.python.Python;
 import com.example.tinytoes.ml.TfCryClassifier;
-import com.jlibrosa.audio.wavFile.WavFile;
+
 
 import java.io.File;
 import java.io.IOException;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 
-import android.media.AudioFormat;
-import android.media.AudioRecord;
 
-import org.apache.commons.math3.geometry.partitioning.Transform;
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
-
-import be.tarsos.dsp.AudioEvent;
-import be.tarsos.dsp.AudioProcessor;
-import be.tarsos.dsp.mfcc.MFCC;
 
 
 
@@ -137,12 +126,15 @@ public class RecordAudio extends AppCompatActivity {
             TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
 
 
+            Thread.sleep(3000);
             resultbox.setText("Hungry");
 
             // Releases model resources if no longer used.
             model.close();
         } catch (IOException e) {
 //            // TODO Handle the exception
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

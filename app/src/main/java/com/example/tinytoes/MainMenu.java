@@ -13,10 +13,16 @@ public class MainMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        getSupportActionBar().hide();
     }
     public void ClassifyAudioButtonPressed(View v){
 
         Intent i = new Intent(MainMenu.this, RecordAudio.class);
+        startActivity(i);
+    }
+    public void MonitorButtonPressed(View v){
+
+        Intent i = new Intent(MainMenu.this, EyeDetectionScreen.class);
         startActivity(i);
     }
     public void ViewStatsButtonPressed(View v){
@@ -37,6 +43,11 @@ public class MainMenu extends AppCompatActivity {
     public void ProfileButtonPressed(View v){
 
         Intent i = new Intent(MainMenu.this, Profile.class);
+        startActivity(i);
+    }
+    public void MoreButtonPressed(View v){
+
+        Intent i = new Intent(MainMenu.this, more_page.class);
         startActivity(i);
     }
     public void MicbuttonPressed(View v){

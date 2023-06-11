@@ -20,7 +20,8 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        imageView = findViewById(R.id.Profile_Pic);
+        imageView = findViewById(R.id.imageView17);
+        getSupportActionBar().hide();
     }
     public void UploadButtonPressed(View v){
 
@@ -50,7 +51,4 @@ public class Profile extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
-
-
 }

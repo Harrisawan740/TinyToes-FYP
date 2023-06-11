@@ -1,2 +1,2 @@
-package PACKAGE_NAME;public class Check_profile {
+public class Check_profile {
 }

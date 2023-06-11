@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/cryanalysis"
+    android:background="@color/white"
     tools:context=".RecordAudio">
 
     <TextView
@@ -35,6 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="172dp"
+        android:backgroundTint="@color/teal_700"
         android:onClick="PredictButtonPressed"
         android:text="Predict"
         app:layout_constraintBottom_toBottomOf="parent"
