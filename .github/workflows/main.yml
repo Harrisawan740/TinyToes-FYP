@@ -1,0 +1,27 @@
+name: TinyToes2
+
+on:
+  push:
+    branches:
+      - Harris-Branch
+      - Mubrra
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test
+        uses: actions/checkout@v2
+
+      - name: Build and test
+        run: ./gradlew build
+
+      - name: Merge to main
+        if: github.ref != 'refs/heads/main'
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git checkout Harris
+          git merge --no-ff ${{ github.ref }}
+          git push origin Harris
