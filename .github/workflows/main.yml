@@ -19,4 +19,4 @@ jobs:
           java-version: '11'
 
       - name: Build app
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug --distribution-type=bin
